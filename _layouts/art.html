@@ -1,0 +1,26 @@
+---
+---
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+        <div class="wrapper">
+            <figure>
+                <img src="/assets/art/{{ page.src }}" alt="" class="main-image"/>
+                <figcaption class="img-caption">{{ page.title }}</figcaption>
+            </figure>
+            {{ content }}
+        </div>
+    </div>
+
+
+  </body>
+
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{page.title}}</title>
+	<link rel="stylesheet" type="text/css" href="styles/toc.css">
+</head>
+<body>
+	<header>
+		<img src="assets/pfp.png" class="pfp">
+		<div class="sub">Naitian's Blog</div>
+		<div class="sub"><a href="https://naitian.org">back to home</a></div>
+	</header>
+	<div class="container">
+			{% for post in site.posts %}
+					<a href='{{ post.url | prepend: "."}}' class="post-container">
+						<div class="post">
+							<img src="{{ post.cover }}">
+							<div class="content">
+								<span class="title"> {{ post.title}} </span>
+								<span class="author"> {{ post.author}} </span>
+								<br>
+								<span class="excerpt"> {{ post.description }}</span>
+							</div>
+						</div>
+					</a>
+			{% endfor %}
+	</div>
+</body>
+</html>

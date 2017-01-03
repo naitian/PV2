@@ -1,0 +1,20 @@
+---
+layout: blog
+---
+{% assign read_time = page.content | number_of_words | divided_by: 180 | round %}
+{% if read_time == 1 %}
+{% assign time = "less than 1 minute" %}
+{% elsif read_time == 1 %}
+{% assign time = "~1 minute" %}
+{% else %}
+{% assign time = "~" | append: read_time | append: " minutes" %}
+{% endif %}
+ <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-meta">by {{ page.author }} &bull; {{ page.date | date: '%B %d, %Y' }} &bull; {{ time }}</span>
+    <img class="cover" src="{{ page.cover }}" alt="Cover photo" />
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+</article>

@@ -1,0 +1,51 @@
+---
+layout: blog
+title: Blog
+permalink: /blog/
+custom_css:
+- blog
+custom_js:
+- bower_components/simple-jekyll-search/dest/jekyll-search
+---
+
+<div class="blurb">
+    A peek into the cacophony of software, Internet, and art that is my life. 
+</div>
+<hr />
+
+<div class="toc-wrapper">
+    <div id="search-wrapper">
+        <input type="text" id="search-input" placeholder="search"/>
+        <div id="results-container"></div>
+    </div>
+
+   <div class="toc">
+        {% for post in site.posts %} 
+        {% assign read_time = post.content | number_of_words | divided_by: 180 | round %}
+        {% if read_time == 1 %}
+        {% assign time = "less than 1 minute" %}
+        {% elsif read_time == 1 %}
+        {% assign time = "~1 minute" %}
+        {% else %}
+        {% assign time = "~" | append: read_time | append: " minutes" %}
+        {% endif %}
+        <a class="entry" href="{{ post.url }}">
+            <div class="entry-wrapper">
+                <h2 class="entry-title">{{ post.title }}</h2> 
+                <span class="entry-meta">{{ post.date | date: '%B %d, %Y'  }} &bull; {{ time }}</span>
+                <span class="entry-desc">{{ post.description }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+<script type="text/javascript">
+  SimpleJekyllSearch({
+	searchInput: document.getElementById('search-input'),
+	resultsContainer: document.getElementById('results-container'),
+	json: '{{ site.baseurl }}/blog-search.json',
+      searchResultTemplate: '<a href="{url}" title="{desc}">{title} <span>{prettyDate}</span></a>',
+	noResultsText: 'No results found',
+  })
+</script>
+

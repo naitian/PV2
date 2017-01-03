@@ -1,0 +1,34 @@
+---
+layout: default
+title: Art
+permalink: /art/
+custom_css:
+- art
+custom_js:
+- bower_components/masonry/dist/masonry.pkgd
+- art
+---
+
+{% assign random = '4220672351286318527008825876661931365864101217612679261597531799539854246056500851454247139117054804' %}
+{% assign randomAr = random | split: '' %}
+
+<div class="grid">
+    <div class="grid-sizer"></div>
+    {% for art in site.art %} 
+        {% assign rand = randomAr[forloop.index] | plus:0 %}
+        {% if rand > 4 %}
+            {% assign size = 'small' %}
+        {% else %}
+            {% assign size = 'big' %}
+        {% endif %}
+        {% assign oInt = rand | modulo: 2 %}
+        {% if oInt == 1 %}
+            {% assign orientation = 'vertical' %}
+        {% else %}
+            {% assign orientation = 'horizontal' %}
+        {% endif %}
+        <a class="grid-item {{ size }} {{ orientation }}" href="{{ art.url }}">
+            <img src="/assets/art/{{ art.src }}" alt="{{ art.title }}"/>
+        </a>
+    {% endfor %}
+</div>

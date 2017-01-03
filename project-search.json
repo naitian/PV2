@@ -1,0 +1,15 @@
+---
+---
+[
+  {% for project in site.projects %}
+    {
+      "title"    : "{{ project.title | escape }}",
+      "category" : "{{ project.category }}",
+      "tags"     : "{{ project.technologies | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ project.url }}",
+      "date"     : "{{ project.date }}",
+      "thumbnail": "{% if project.thumbnail %}{{ project.thumbnail }}{% else %}blank_project.png{% endif %}",
+      "desc": "{{ project.description }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
