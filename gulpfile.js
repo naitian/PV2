@@ -1,3 +1,4 @@
+'use strict';
 // Hugely borrowed from https://www.chenhuijing.com/blog/gulp-jekyll-github/
 
 const gulp = require('gulp');
@@ -15,18 +16,21 @@ const image = require('gulp-imagemin');
  ********************/
 
 const jekyllBuild = () => {
-   return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--drafts', '--incremental'], {stdio: 'inherit'});
+   return cp.spawn('bundle', 
+        ['exec', 'jekyll', 'build', '--drafts', '--incremental', '--config', '_config_dev.yml'], 
+        {stdio: 'inherit'});
 };
 
 const jekyllProduction = () => {
    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'});
-}
+};
 
 const css = () => {
    return gulp.src('_assets/css/**/*.scss')
       .pipe(debug())
       .pipe(sass().on('error', sass.logError))
-      .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true  }))
+      .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+      .pipe(cleancss())
       .pipe(gulp.dest('css/'));
 };
 
@@ -44,7 +48,7 @@ const watch = () => {
    gulp.parallel(['css', 'js', 'image']);
    jekyllBuild();
    gulp.watch('_assets/js/**/*.js', gulp.series('js', 'jekyll-rebuild'));
-   gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], gulp.series('css', 'jekyll-rebuild'))
+   gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], gulp.series('css', 'jekyll-rebuild'));
    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '**/*.html', '!_site/*'], gulp.series( 'jekyll-rebuild'));
 };
 
@@ -53,7 +57,7 @@ const imageTask = () => {
       .pipe(debug())
       .pipe(image())
       .pipe(gulp.dest('assets'));
-}
+};
 
 /***********************
  * Task Instantiations *
@@ -71,4 +75,4 @@ gulp.task('image', imageTask);
 
 gulp.task('watch', watch);
 
-gulp.task('build', gulp.series([ gulp.parallel([ 'js', 'css', 'image' ]), 'jekyll-prod' ]))
+gulp.task('build', gulp.series([ gulp.parallel([ 'js', 'css', 'image' ]), 'jekyll-prod' ]));

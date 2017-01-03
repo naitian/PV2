@@ -52,7 +52,7 @@ defaults:
             path: ""
             type: "posts"
         values:
-            permalink: /:categories/:year/:month/:day/:title/
+            permalink: /blog/:year/:month/:day/:title/
             layout: post
             custom_css:
                 - post
