@@ -1,0 +1,37 @@
+.site-title {
+    font-size: 3rem;
+    color: $theme_color;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+header > .wrapper {
+    position: relative;
+    padding: 30px;
+
+}
+
+nav {
+    width: auto;
+    float: right;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    color: $other_color;
+    font-size: 1rem;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: $active_color;
+}
+
+.nav-item.selected {
+    color: $active_color;
+}

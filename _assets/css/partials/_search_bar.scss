@@ -1,0 +1,25 @@
+#search-wrapper {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#search-wrapper > input {
+    min-width: 210px;
+    margin: 0 auto;
+    flex: 1;
+    width: calc(60% - 20px);
+    font-size: 20px;
+    padding: 10px;
+    color: #FFF;
+    background-color: $theme_color;
+    border: none;
+}
+
+#search-wrapper > input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .8);
+}
+
+

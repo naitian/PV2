@@ -1,0 +1,18 @@
+$theme_color: #e74c3c;
+$active_color: #e74c3c;
+$other_color: #000000;
+$text_color: #4a4342;
+$link_color: #615ddd;
+
+@import 'partials/_header.scss';
+@import 'partials/_markdown.scss';
+@import 'partials/_footer.scss';
+
+.page-content > .wrapper {
+	color: $text_color;
+}
+
+a {
+	color: $link_color;
+}
+

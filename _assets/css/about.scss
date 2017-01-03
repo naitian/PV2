@@ -1,0 +1,40 @@
+$theme_color: #2700FA;
+$active_color: #FFFFFF;
+$other_color: #000000;
+
+@import 'partials/_header';
+@import 'partials/_footer';
+
+p {
+    width: 40%;
+}
+
+body {
+    background-image: url('/assets/portrait.jpg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
+}
+
+@media(max-width: 830px) {
+    body {
+        background-size: cover !important;
+    }
+
+    .site-title {
+        color: #000
+    }
+
+    p {
+        width: 100%;
+    }
+
+    .page-content > .wrapper {
+        height: 50%;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0
+    }
+}
+
+

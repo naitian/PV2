@@ -1,0 +1,21 @@
+.highlight .lineno {
+    user-select: none;
+}
+
+.highlight .gutter {
+    padding: 0px 5px;
+    border-right: 1px solid #57737B;
+}
+
+.highlight .code {
+    padding: 0px 10px;
+}
+
+.highlight {
+	overflow-x: scroll;
+    width: 80vw;
+    border-left: 10vw solid #242424;
+    border-right: 10vw solid #242424;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

@@ -8,3 +8,4 @@ assets/
 js/
 css/
 vendor/
+!_assets/**

@@ -1,0 +1,72 @@
+@import 'partials/_terminal';
+
+body {
+    background-color: #FFDC00;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+#wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 32px;
+}
+
+ul {
+    padding-top: 20px;
+    padding-left: 0;
+    display: flex;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    padding-right: 50px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    width: 25%;
+    border-bottom: 3px solid black;
+}
+
+#flip {
+    width: 0px;
+    height:0px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    border-left: 50px solid #fff0af;
+    border-bottom: 50px solid #272727;
+
+    transition: border-width .2s ease-in-out;
+
+    box-shadow: -5px -5px 10px 0px #e4c642;
+}
+
+#flip:hover {
+    border-left-width: 60px;
+    border-bottom-width: 60px;
+    cursor: pointer;
+
+    box-shadow: -7px -7px 17px 4px #e4c642;
+}
+
+@media(max-width:815px) {
+    ul {
+        flex-direction: column;
+    }
+}

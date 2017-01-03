@@ -1,0 +1,50 @@
+$theme_color: #0074D9;
+$active_color: #0074D9;
+$other_color: #000000;
+
+@import 'partials/_header';
+@import 'partials/_footer';
+
+.grid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grid-sizer {
+    float: left;
+    width: calc(33.3% - 8px);
+    margin: 4px;
+}
+
+.grid-item {
+    float: left;
+    margin: 4px;
+    width: calc(33.3% - 8px);
+    background-color: $theme_color;
+    box-shadow: 0px 0px 8px #555;
+    /* min-height: 280px; */
+    /* max-height: 360px; */
+    /* overflow: hidden; */
+    transform: perspective(500px) translateZ(0px);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.grid-item:hover {
+    box-shadow: 0px 0px 10px $theme_color;
+    transform: perspective(500px) translateZ(10px);
+}
+
+.grid-item img {
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+/* .grid-item.horizontal { */
+/*     height: 140px; */
+/* } */
+/*  */
+/* .grid-item.vertical { */
+/*     height: 280px; */
+/* } */
+

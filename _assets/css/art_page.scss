@@ -1,0 +1,27 @@
+$theme_color: #C9E0F4;
+$active_color: #C9E0F4;
+$other_color: #D3D8DC;
+$text_color: #D3D8DC;
+$link_color: #485EE6;
+
+@import 'partials/_header';
+@import 'partials/_footer';
+
+.main-image {
+    max-width: 400px;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+body {
+    background-color: #354C60;
+}
+
+.page-content > .wrapper {
+	color: $text_color;
+}
+
+a {
+	color: $link_color;
+}
+

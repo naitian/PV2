@@ -1,0 +1,26 @@
+header .wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header .wrapper {
+    margin-bottom: 50px;
+}
+
+.site-title {
+    float: left;
+    line-height: 1;
+}
+
+.site-nav {
+    float: right;
+    line-height: 1;
+}
+
+.subtext {
+    line-height: 1.5;
+   font-size: 18px; 
+   font-weight: 400;
+   display: block;
+}
