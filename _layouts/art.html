@@ -15,10 +15,21 @@
                 <img src="/assets/art/{{ page.src }}" alt="" class="main-image"/>
                 <figcaption class="img-caption">{{ page.title }}</figcaption>
             </figure>
-            {{ content }}
+        <h1>What is it?</h1>
+            {{ page.description }} 
+        {% assign realContent = page.content | normalize_whitespace %}
+        {% if realContent != "" %}
+        <h1>Story</h1>
+            {{ page.content }}
+        {% endif %}
+        {% if page.others %}
+        <h1>More Images</h1>
+        {% for img in page.others %}
+        <img src="/assets/art/{{ img }}" alt="" class="other-image"/>
+        {% endfor %}
+        {% endif %}
         </div>
     </div>
-
 
   </body>
 

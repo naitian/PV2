@@ -6,6 +6,7 @@ $link_color: #485EE6;
 
 @import 'partials/_header';
 @import 'partials/_footer';
+@import 'partials/_markdown';
 
 .main-image {
     max-width: 400px;
@@ -25,3 +26,6 @@ a {
 	color: $link_color;
 }
 
+.other-image {
+    width: 30%;
+}
