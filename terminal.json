@@ -2,34 +2,16 @@
 ---
 {% capture nl %}
 {% endcapture %}
+{% assign files = site.documents %}
+{% for page in site.html_pages %}
+{% assign files = files | push: page %}
+{% endfor %}
 {
-	"dir": true,
-	"files": {
-		{% for nav-item in site.navigation %}
-			{% unless nav-item.title == "home"%}
-				"{{ nav-item.title }}": {
-					"url": "{{ nav-item.url }}",
-					{% if nav-item.dir %}
-					"dir": true,
-					"content": "",
-					"files": {
-						{% for item in site[nav-item.title] %}
-						"{{ item.title }}": {
-							"content": "{{ item.content | strip_html | escape | replace: '"', '\\"' | replace: nl, '<br>' | replace: ' ', '&nbsp;'}}",
-							"url": "{{ item.url }}"
-						}{% unless forloop.last %},{% endunless %}
-						{% endfor %}
-					} {% else %}
-					"dir": false,
-					"files": {},
-					{% for page in site.html_pages %}
-						{% if page.name contains nav-item.title %}
-					"content": "{{ page.content | strip_html | escape | replace: '"', '\\"' | replace: nl, '<br>' | replace: ' ', '&nbsp;'}}"
-						{% endif %}
-					{% endfor %}
-					{% endif %}
-				} {% unless forloop.last %},{% endunless %}
-			{% endunless %}
-		{% endfor %}
-	}
+    {% for page in files %}
+    "{{ page.url }}": {
+        "content": "{{ page.content | replace: '"', '\"' | normalize_whitespace}}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+
 }
+
