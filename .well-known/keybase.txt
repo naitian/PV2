@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/naitian
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://naitian.org
+  * I am naitian (https://keybase.io/naitian) on keybase.
+  * I have a public key ASBZMSs1THnzerkdn0n5EtIbiqVUJax54WuWD986rF5MWAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101c3a3b519d73e6b0a813529d058fedbc9185895eb253f2f390ea492bcd540c7600a",
+            "host": "keybase.io",
+            "kid": "012059312b354c79f37ab91d9f49f912d21b8aa55425ac79e16b960fdf3aac5e4c580a",
+            "uid": "528446897a6b87e592b4c02f5be6ac19",
+            "username": "naitian"
+        },
+        "service": {
+            "hostname": "naitian.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.13"
+    },
+    "ctime": 1464618437,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1464618358,
+        "hash": "30e971c142107bec31d46e538a04315c798c4edfb0ce2a7b2c29e0f8c4f1f3d0e0ed80225acc39b7142a97fa1e929c11ee90cf8be32a40883ab14b57211a8a25",
+        "seqno": 474044
+    },
+    "prev": "142aae1b2cf947d8ee1fb5327bd0baf5a5740fb64340f46257c0086333d5c5a1",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgWTErNUx583q5HZ9J+RLSG4qlVCWseeFrlg/fOqxeTFgKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxYzNhM2I1MTlkNzNlNmIwYTgxMzUyOWQwNThmZWRiYzkxODU4OTVlYjI1M2YyZjM5MGVhNDkyYmNkNTQwYzc2MDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNTkzMTJiMzU0Yzc5ZjM3YWI5MWQ5ZjQ5ZjkxMmQyMWI4YWE1NTQyNWFjNzllMTZiOTYwZmRmM2FhYzVlNGM1ODBhIiwidWlkIjoiNTI4NDQ2ODk3YTZiODdlNTkyYjRjMDJmNWJlNmFjMTkiLCJ1c2VybmFtZSI6Im5haXRpYW4ifSwic2VydmljZSI6eyJob3N0bmFtZSI6Im5haXRpYW4ub3JnIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTMifSwiY3RpbWUiOjE0NjQ2MTg0MzcsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ2NDYxODM1OCwiaGFzaCI6IjMwZTk3MWMxNDIxMDdiZWMzMWQ0NmU1MzhhMDQzMTVjNzk4YzRlZGZiMGNlMmE3YjJjMjllMGY4YzRmMWYzZDBlMGVkODAyMjVhY2MzOWI3MTQyYTk3ZmExZTkyOWMxMWVlOTBjZjhiZTMyYTQwODgzYWIxNGI1NzIxMWE4YTI1Iiwic2Vxbm8iOjQ3NDA0NH0sInByZXYiOiIxNDJhYWUxYjJjZjk0N2Q4ZWUxZmI1MzI3YmQwYmFmNWE1NzQwZmI2NDM0MGY0NjI1N2MwMDg2MzMzZDVjNWExIiwic2Vxbm8iOjExLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQD7OoVkPN7TCc/UBIeiM23sE1p6eIlPyx/zlTkuqqIJegofXkKlnajm3TRuiSZ80B3VhXEGSGyy/RYMu6ae4UAioc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/naitian
+
+==================================================================
