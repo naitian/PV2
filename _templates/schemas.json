@@ -1,0 +1,28 @@
+{
+    "blog": {
+        "title": "required",
+        "author": "Naitian Zhou",
+        "cover": "required",
+        "desc": "A blog post",
+        "tag": [
+            {"name": ""}
+        ]
+    },
+    "art": {
+        "title": "required",
+        "img": "required",
+        "desc": "An art piece",
+        "other": [
+            {"file": ""}
+        ]
+    },
+    "project": {
+        "title": "",
+        "thumb": "",
+        "desc": "A project page",
+        "tech": [
+            {"name": ""}
+        ]
+    }    
+}
+

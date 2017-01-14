@@ -10,3 +10,4 @@ js/
 css/
 vendor/
 !_assets/**
+env/
