@@ -14,7 +14,7 @@ while True:
         break
     others.append({'file': src})
 
-final = open('../_art/' + title.lower(), 'w')
+final = open('_art/' + title.lower().replace(' ', '-'), 'w')
 
 obj = {
     'title': title,

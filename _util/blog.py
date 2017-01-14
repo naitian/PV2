@@ -17,7 +17,7 @@ while True:
         break
     tags.append({'name': tag})
 
-final = open('../_drafts/' + title.lower(), 'w')
+final = open('_drafts/' + title.lower().replace(' ', '-'), 'w')
 
 obj = {
     'title': title,

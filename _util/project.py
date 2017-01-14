@@ -14,7 +14,7 @@ while True:
         break
     tech.append({'name': technology})
 
-final = open('../_projects/' + title.lower(), 'w')
+final = open('_projects/' + title.lower().replace(' ', '-'), 'w')
 
 obj = {
     'title': title,
