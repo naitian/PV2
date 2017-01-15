@@ -63,7 +63,7 @@ class Terminal {
         this.input.focus();
 
         this.typer.addText('Hi! I\'m Naitian. \'exit\' to go back.');
-        // this.typer.type();
+        this.typer.type();
 
     }
 
