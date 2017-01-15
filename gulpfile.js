@@ -10,6 +10,7 @@ const cp = require('child_process');
 const babel = require('gulp-babel');
 const debug = require('gulp-debug');
 const image = require('gulp-imagemin');
+const newer = require('gulp-newer');
 
 /********************
  * Task Definitions *
@@ -53,8 +54,8 @@ const watch = () => {
 };
 
 const imageTask = () => {
-   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg'],
-    {since: gulp.lastRun('imageTask')})
+   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg'])
+      .pipe(newer('assets'))
       .pipe(debug())
       .pipe(image())
       .pipe(gulp.dest('assets'));
