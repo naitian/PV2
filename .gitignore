@@ -2,7 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 .bundle
-.*.swp
 _config_dev.yml
 node_modules/
 assets/
@@ -10,4 +9,5 @@ js/
 css/
 vendor/
 !_assets/**
+**/*.swp
 env/

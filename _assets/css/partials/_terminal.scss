@@ -6,8 +6,44 @@ body.terminal {
     line-height: 24px;
 }
 
-#buffer {
+.buffer {
     width: 80vw;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 0;
 }
+
+#display {
+    margin-top: 10vh;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+#input {
+    position: relative;
+    width: auto;
+    color: transparent;
+    text-shadow: 0 0 0 #0EFF1F;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#input::before {
+    content: '$ ';
+}
+
+#input::after {
+    content: '.';
+    position: relative;
+    background-color: #0EFF1F;
+    animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+

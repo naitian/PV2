@@ -101,4 +101,8 @@ exclude:
   - package.json
   - node_modules/
   - gulpfile.js
-  - _assets
+  - _assets/
+  - env/
+  - README.md
+include:
+  - .well-known/
