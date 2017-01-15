@@ -53,7 +53,8 @@ const watch = () => {
 };
 
 const imageTask = () => {
-   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg'])
+   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg'],
+    {since: gulp.lastRun('imageTask')})
       .pipe(debug())
       .pipe(image())
       .pipe(gulp.dest('assets'));
