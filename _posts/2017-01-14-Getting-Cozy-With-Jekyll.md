@@ -77,6 +77,7 @@ relevant directory structure:
 I used the mustache templating language for easy templating. The art.mustache
 file looks like this:
 
+{% raw %}
 ```
 ---
 title: {{title}}
@@ -90,6 +91,7 @@ others:
 description: {{desc}}
 ---
 ```
+{% endraw %}
 
 This method gives me a lot of flexibility to flesh out the templates in the
 future. I could even add content into the body text, in addition to the front
