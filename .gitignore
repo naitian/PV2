@@ -10,4 +10,5 @@ css/
 vendor/
 !_assets/**
 **/*.swp
+**/.DS_Store
 env/

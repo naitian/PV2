@@ -44,12 +44,16 @@ class Terminal {
         this.elem.innerHTML = '';
         this.elem.classList.add('terminal');
 
+        this.wrap = document.createElement('div');
+        this.wrap.id = 'term-wrap';
+        this.elem.appendChild(this.wrap);
+
         this.buffer = document.createElement('div');
         this.buffer.id = 'display';
         this.buffer.className = 'buffer';
         this.typer = new Typer(this.buffer, {prepend: ''});
 
-        this.elem.appendChild(this.buffer);
+        this.wrap.appendChild(this.buffer);
 
         this.input = document.createElement('div');
         this.input.id = 'input';
@@ -59,7 +63,7 @@ class Terminal {
             this.input.focus();
         };
         this.input.addEventListener('keydown', this.handleKeyDown);
-        this.elem.appendChild(this.input);
+        this.wrap.appendChild(this.input);
         this.input.focus();
 
         this.typer.addText('Hi! I\'m Naitian. \'exit\' to go back.');
@@ -129,6 +133,7 @@ class Terminal {
         else
             this.buffer.innerHTML += '<br>' + message;
         this.buffer.scrollTop = this.buffer.scrollHeight;
+        this.wrap.scrollTop = this.wrap.scrollHeight;
     }
 
     ls () {

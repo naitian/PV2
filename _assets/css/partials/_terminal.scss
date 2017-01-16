@@ -4,6 +4,8 @@ body.terminal {
     font-family: 'Menlo', 'Meslo', Monospace;
     font-size: 16px;
     line-height: 24px;
+    padding-top: 10vh;
+    height: calc(100% - 10vh)
 }
 
 .buffer {
@@ -13,15 +15,25 @@ body.terminal {
     padding: 0;
 }
 
+#term-wrap {
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
 #display {
-    margin-top: 10vh;
-    max-height: 80vh;
     overflow: hidden;
+    
+    a {
+        color: #A5C0FF;
+    }
 }
 
 #input {
     position: relative;
-    width: auto;
     color: transparent;
     text-shadow: 0 0 0 #0EFF1F;
 }
