@@ -7,6 +7,10 @@ $active_color: black;
 @import 'partials/_blog_header';
 @import 'partials/_footer';
 
+.page-content {
+    overflow-x: hidden;
+}
+
 .post {
     max-width: 600px;
     width: 80vw;
