@@ -1,7 +1,6 @@
 ---
 title: Getting Cozy with Jekyll
 author: Naitian Zhou
-cover: /assets/TODO
 description: A quick guide to easily generating new Jekyll posts with Python and Mustache
 tags:
     - Jekyll

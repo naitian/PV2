@@ -12,7 +12,9 @@ layout: blog
  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <h1 class="post-title">{{ page.title }}</h1>
     <span class="post-meta">by {{ page.author }} &bull; {{ page.date | date: '%B %d, %Y' }} &bull; {{ time }}</span>
-    <img class="cover" src="{{ page.cover }}" alt="Cover photo" />
+    {% if page.cover %}
+        <img class="cover" src="{{ page.cover }}" alt="Cover photo" />
+    {% endif %}
     <div class="post-content" itemprop="articleBody">
         {{ content }}
     </div>
