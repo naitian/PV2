@@ -18,7 +18,7 @@ const newer = require('gulp-newer');
 
 const jekyllBuild = () => {
    return cp.spawn('bundle', 
-        ['exec', 'jekyll', 'build', '--drafts', '--incremental', '--config', '_config_dev.yml'], 
+        ['exec', 'jekyll', 'build', '--drafts', '--incremental', '--config', '_config_dev.yml', 'JEKYLL_ENV=production'], 
         {stdio: 'inherit'});
 };
 
