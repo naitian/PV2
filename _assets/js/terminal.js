@@ -7,6 +7,10 @@ class Terminal {
         this.files = null;
 
         this.pwd = '/';
+        this.history = [];
+        this.historyIndex = 0;
+        this.historyMode = false;
+        this.historySave = '';
         this.commands = new Map();
 
         this.init = this.init.bind(this);
@@ -14,8 +18,11 @@ class Terminal {
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.enter = this.enter.bind(this);
         this.tab = this.tab.bind(this);
+        this.historyUp = this.historyUp.bind(this);
+        this.historyDown = this.historyDown.bind(this);
         this.process = this.process.bind(this);
         this.register = this.register.bind(this);
+
         this.ls = this.ls.bind(this);
         this.help = this.help.bind(this);
         this.cd = this.cd.bind(this);
@@ -72,9 +79,17 @@ class Terminal {
     }
 
     handleKeyDown (e) {
-        if (this.typer.typing)
+        if (this.typer.typing) {
             e.preventDefault();
-        if (e.keyCode === 39 || e.keyCode === 37 || e.keyCode === 9 || e.keyCode === 13) {
+            return;
+        }
+
+        if (e.keyCode === 39 || 
+            e.keyCode === 37 || 
+            e.keyCode === 9 || 
+            e.keyCode === 13 ||
+            e.keyCode === 38 ||
+            e.keyCode === 40) {
             e.preventDefault();
         }
 
@@ -82,11 +97,47 @@ class Terminal {
             this.enter();
         } else if (e.keyCode === 9) {
             this.tab();
+        } else if (e.keyCode === 40) {
+            this.historyDown();
+        } else if (e.keyCode === 38) {
+            this.historyUp();
         }
+    }
+
+    historyDown () {
+        if (this.history.length === 0)
+            return;
+        this.historyIndex--;
+        if (this.historyIndex >= 0) {
+            this.input.innerText = this.history[this.historyIndex]; 
+            this.placeCaretAtEnd(this.input);
+        }
+         if (this.historyIndex < 0) {
+            console.log('hi');
+            this.historyIndex = 0;
+            this.historyMode = false;
+            this.input.innerText = this.historySave;
+             this.placeCaretAtEnd(this.input);
+        }
+   }
+
+    historyUp () {
+        if (this.history.length === 0)
+            return;
+        if (this.historyIndex === 0 && !this.historyMode)
+            this.historySave = this.input.innerText;
+        if (this.historyMode)
+            this.historyIndex++;
+        this.historyMode = true;
+        if (this.historyIndex >= this.history.length)
+            this.historyIndex = this.history.length - 1;
+        this.input.innerText = this.history[this.historyIndex];
+        this.placeCaretAtEnd(this.input);
     }
 
     enter () {
         let message = this.input.innerText;
+        this.history.unshift(message);
         this.print('$ ' + message);
         this.input.innerText = '';
 
@@ -134,6 +185,25 @@ class Terminal {
             this.buffer.innerHTML += '<br>' + message;
         this.buffer.scrollTop = this.buffer.scrollHeight;
         this.wrap.scrollTop = this.wrap.scrollHeight;
+    }
+
+    placeCaretAtEnd (el) {
+        // http://jsfiddle.net/Gaqfs/9/
+        el.focus();
+        if (typeof window.getSelection !== 'undefined' && 
+            typeof document.createRange !== 'undefined') {
+            var range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (typeof document.body.createTextRange !== 'undefined') {
+            var textRange = document.body.createTextRange();
+            textRange.moveToElementText(el);
+            textRange.collapse(false);
+            textRange.select();
+        }    
     }
 
     ls () {
