@@ -14,7 +14,7 @@ schemas = json.loads(schemaJson, object_pairs_hook=collections.OrderedDict)
 save_dirs = {
     'blog': os.path.join(filedir, '../_drafts/'),
     'art': os.path.join(filedir, '../_art/'),
-    'projects': os.path.join(filedir, '../_projects/')
+    'project': os.path.join(filedir, '../_projects/'),
 }
 
 def prompt(title, obj):
