@@ -61,8 +61,25 @@ a:hover {
     border-left-width: 60px;
     border-bottom-width: 60px;
     cursor: pointer;
-
     box-shadow: -7px -7px 17px 4px #92a8da;
+}
+
+#flip:hover::after {
+    right: 70px;
+}
+
+#flip::after {
+    position: absolute;
+    font-family: Meslo, Menlo;
+    content: 'click on me! =>';
+    color: #FFF;
+    background-color: #000;
+    right: 60px;
+    width: 150px;
+    padding: 2px;
+    text-align: center;
+    box-shadow: -5px -5px 5px rgba(80, 80, 80, .3);
+    transition: right .2s ease-in-out;
 }
 
 @media(max-width:815px) {
