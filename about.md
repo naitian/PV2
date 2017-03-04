@@ -18,3 +18,4 @@ Find out more about me on:
 - Github [@naitian](https://github.com/naitian)
 - Twitter [@NaitianZhou](https://twitter.com/NaitianZhou)
 - LinkedIn [@NaitianZhou](https://linkedin.com/in/NaitianZhou)
+- Resume [here](https://naitian.org/resume)
