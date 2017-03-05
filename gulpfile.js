@@ -50,6 +50,7 @@ const watch = () => {
    jekyllBuild();
    gulp.watch('_assets/js/**/*.js', gulp.series('js', 'jekyll-rebuild'));
    gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], gulp.series('css', 'jekyll-rebuild'));
+   gulp.watch(['_assets/img/**/*'], gulp.series('image-dev', 'jekyll-rebuild'));
    gulp.watch(['*.html', '*.json', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '**/*.html', '!_site/*'], gulp.series( 'jekyll-rebuild'));
 };
 
@@ -60,6 +61,11 @@ const imageTask = () => {
       .pipe(image())
       .pipe(gulp.dest('assets'));
 };
+
+const imageDev = () => {
+   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg']) 
+      .pipe(gulp.dest('assets'));
+}
 
 /***********************
  * Task Instantiations *
@@ -74,6 +80,8 @@ gulp.task('css', css);
 gulp.task('js', js);
 
 gulp.task('image', imageTask);
+
+gulp.task('image-dev', imageDev);
 
 gulp.task('watch', watch);
 
