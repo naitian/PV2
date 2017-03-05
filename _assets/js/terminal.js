@@ -73,7 +73,7 @@ class Terminal {
         this.wrap.appendChild(this.input);
         this.input.focus();
 
-        this.typer.addText('Hi! I\'m Naitian. \'exit\' to go back.');
+        this.typer.addText('Hi! I\'m Naitian. \'help\' to do more stuff.');
         this.typer.type();
 
     }

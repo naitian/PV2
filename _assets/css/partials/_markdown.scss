@@ -55,10 +55,9 @@ img {
 
 .img {
 	display: block;
-	width: 120%;
-	max-width: calc(100vw - 60px);
-	margin-left: 50%;
-	transform: translateX(-50%);
+   margin: 0;
+	width: 100%;
+	max-width: 900px;
 }
 
 .img.small {
@@ -69,6 +68,8 @@ img {
     font-style: oblique;
     text-align: center;
     width: inherit;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, .6)
 }
 
 .emoji {
@@ -76,4 +77,32 @@ img {
 	display: inline;
 	margin: 0;
 	transform: none;
+}
+
+#markdown-toc {
+   li {
+      list-style: none;
+      line-height: 1.5;
+      transition: padding-left .2s ease-in-out;
+
+      a {
+         text-decoration: none;
+         color: black;
+         font-weight: bold;
+         text-transform: lowercase;
+      }
+
+      ul {
+         padding-left: 30px;
+         li {
+            a {
+               color: grey;
+            }
+         }
+      }
+   }
+
+   li:hover {
+      padding-left: 10px;
+   }
 }
