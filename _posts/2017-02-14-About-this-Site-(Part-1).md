@@ -1,5 +1,5 @@
 ---
-title: About this Site (Part 1)
+title: About this Site - Intro
 author: Naitian Zhou
 description: A walkthrough of how this site was built.
 tags:
@@ -9,11 +9,18 @@ tags:
     - Javascript
 ---
 
+*Edited 3/6/17 to add in new links and change title.*
+
 # Introduction
 
 I spent the better part of my winter break revamping my personal website (of
 which this blog is a component). You can view the old site here:
 [naitian.github.io](https://naitian.github.io).
+
+If you want to skip to another part of this walkthrough, I have links to all of
+the available parts listed for you here:
+
+1. **[Design]({{ site.baseurl }}{% post_url 2017-03-05-About-this-Site---Design %})**
 
 # Setting Goals
 
