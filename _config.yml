@@ -64,7 +64,6 @@ defaults:
             layout: project
             custom_css:
                 - project_page
-                - markdown
     -
         scope:
             path: ""
@@ -73,7 +72,6 @@ defaults:
             layout: art
             custom_css:
                 - art_page
-                - markdown
 
 
 kramdown:
