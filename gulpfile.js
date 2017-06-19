@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // Hugely borrowed from https://www.chenhuijing.com/blog/gulp-jekyll-github/
 
 const gulp = require('gulp');
@@ -17,8 +17,8 @@ const newer = require('gulp-newer');
  ********************/
 
 const jekyllBuild = () => {
-   return cp.spawn('bundle', 
-        ['exec', 'jekyll', 'build', '--drafts', '--incremental', '--config', '_config_dev.yml', 'JEKYLL_ENV=production'], 
+   return cp.spawn('bundle',
+        ['exec', 'jekyll', 'build', '--drafts', '--config', '_config_dev.yml', 'JEKYLL_ENV=production'],
         {stdio: 'inherit'});
 };
 
@@ -27,16 +27,16 @@ const jekyllProduction = () => {
 };
 
 const css = () => {
-   return gulp.src('_assets/css/**/*.scss')
+    return gulp.src('./_assets/css/**/*.scss')
       .pipe(debug())
       .pipe(sass().on('error', sass.logError))
       .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
       .pipe(cleancss())
-      .pipe(gulp.dest('css/'));
+      .pipe(gulp.dest('./css'));
 };
 
 const js = () => {
-   return gulp.src('_assets/js/**/*.js')
+    return gulp.src('./_assets/js/**/*.js')
       .pipe(debug())
       .pipe(babel({
          presets: ['es2015']
@@ -48,10 +48,10 @@ const js = () => {
 const watch = () => {
    gulp.parallel(['css', 'js', 'image']);
    jekyllBuild();
-   gulp.watch('_assets/js/**/*.js', gulp.series('js', 'jekyll-rebuild'));
-   gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], gulp.series('css', 'jekyll-rebuild'));
-   gulp.watch(['_assets/img/**/*'], gulp.series('image-dev', 'jekyll-rebuild'));
-   gulp.watch(['*.html', '*.json', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '**/*.html', '!_site/*'], gulp.series( 'jekyll-rebuild'));
+   gulp.watch('_assets/js/**/*.js', {interval: 500}, gulp.series('js', 'jekyll-rebuild'));
+   gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], {interval: 500}, gulp.series('css', 'jekyll-rebuild'));
+   gulp.watch(['_assets/img/**/*'], {interval: 500}, gulp.series('image-dev', 'jekyll-rebuild'));
+   gulp.watch(['*.html', '*.json', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '**/*.html', '!_site/*'], {interval: 500}, gulp.series( 'jekyll-rebuild'));
 };
 
 const imageTask = () => {
@@ -63,7 +63,7 @@ const imageTask = () => {
 };
 
 const imageDev = () => {
-   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg']) 
+   return gulp.src(['_assets/img/**/*.png', '_assets/img/**/*.jpg', '_assets/img/**/*.gif', '_assets/img/**/*.svg'])
       .pipe(gulp.dest('assets'));
 }
 
