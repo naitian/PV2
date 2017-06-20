@@ -4,18 +4,22 @@
 
 .highlight .gutter {
     padding: 0px 5px;
-    border-right: 1px solid #57737B;
+    background-color: #444
 }
 
 .highlight .code {
     padding: 0px 10px;
 }
 
+.highlight pre {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .highlight {
-	overflow-x: scroll;
-    width: 80vw;
-    border-left: 10vw solid #242424;
-    border-right: 10vw solid #242424;
-    margin-left: 50%;
+    overflow-x: scroll;
+    width: 100%;
+    margin: 30px 0 30px 50%;
     transform: translateX(-50%);
 }

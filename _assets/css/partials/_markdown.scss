@@ -33,6 +33,7 @@ code {
     color: #f6f3e8;
     padding: 2px 3px;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 blockquote {
@@ -51,6 +52,8 @@ kbd {
 
 img {
     width: inherit;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 table.dataframe {
