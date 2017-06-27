@@ -18,5 +18,6 @@ layout: blog
     <div class="post-content" itemprop="articleBody">
         {{ content }}
     </div>
+    <div class="post-meta">Tags: {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
 
 </article>
