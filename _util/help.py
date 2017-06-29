@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from pybars import Compiler
+
 import sys
 import os
 import json
 import collections
 import copy
-import pystache
 import datetime
+
+compiler = Compiler()
 
 filedir = os.path.dirname(__file__)
 schemaJson = open(os.path.join(filedir, '../_templates/schemas.json')).read()
@@ -47,11 +50,12 @@ elif sys.argv[1] == 'new':
     elif sys.argv[2] in schemas:
         schema = schemas[sys.argv[2]]
         template = open(os.path.join(filedir, '../_templates/{}.mustache'.format(sys.argv[2]))).read()
+        template = compiler.compile(template)
 
         obj = prompt(sys.argv[2], schema)
 
         final = open(save_dirs[sys.argv[2]] + obj.get('title').replace(' ', '-') + '.md', 'w')
-        final.write(pystache.render(template, obj))
+        final.write(template(obj))
     else:
         print('No such schema')
         sys.exit()

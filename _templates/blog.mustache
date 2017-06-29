@@ -1,12 +1,13 @@
 ---
 title: {{title}}
 author: {{author}}
+{{#if cover}}
 cover: /assets/{{cover}}
+{{/if}}
 description: {{desc}}
-{{#tag}}
-tags:
-{{/tag}}
-{{#tag}}
+{{#if tag}}
+tags:{{#each tag}}
     - {{name}}
-{{/tag}}
+{{/each}}
+{{/if}}
 ---
