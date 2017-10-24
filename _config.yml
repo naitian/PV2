@@ -56,7 +56,7 @@ defaults:
             layout: post
             custom_css:
                 - post
-            custom_css:
+            custom_js:
                 - markdown
     -
         scope:
