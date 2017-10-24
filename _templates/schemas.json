@@ -2,11 +2,12 @@
     "blog": {
         "title": "required",
         "author": "Naitian Zhou",
-        "cover": "required",
+        "cover": "",
         "desc": "A blog post",
         "tag": [
             {"name": ""}
-        ]
+        ],
+        "toc": true
     },
     "art": {
         "title": "required",
@@ -23,6 +24,6 @@
         "tech": [
             {"name": ""}
         ]
-    }    
+    }
 }
 
