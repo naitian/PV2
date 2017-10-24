@@ -1,5 +1,6 @@
 @import '_syntax';
 @import '_code';
+@import '_lightbox';
 
 .page-content > .wrapper {
     /* font-family: Georgia, serif; */
@@ -51,7 +52,7 @@ kbd {
 }
 
 img {
-    width: inherit;
+    width: 100%;
     margin-left: 50%;
     transform: translateX(-50%);
 }
