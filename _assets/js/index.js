@@ -5,7 +5,7 @@ window.onload = () => {
     flip.addEventListener('click', () => {
       // activateShell();
       window.location.hash = '#terminal';
-      window.location.reload(true) 
+      window.location.reload(true)
     });
 
     if (window.location.hash === '#terminal') {

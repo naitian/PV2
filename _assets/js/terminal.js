@@ -258,9 +258,17 @@ class Terminal {
 
   ls (args) {
     let old = this.pwd;
-    let target = args;
+    let target;
+    if (args.length === 0) {
+      console.log(this.pwd)
+      target = ['.'];
+    } else {
+      target = args;
+      console.log(target)
+    }
     if (this.cd(target) !== true)
       return
+    console.log(this.pwd)
     let set = new Set();
     for (let file in this.files) {
       if (file.indexOf(this.pwd) === 0 && file !== this.pwd) {
@@ -318,6 +326,27 @@ class Terminal {
   }
 
   normalizePath (path) {
+    /*
+     *  Should return the absolute path with leading /
+     *  given a path relative to pwd
+     *
+     *    /blog/ -> /blog
+     *    /blog/2016 -> /blog/2016
+     *    /blog/2016/ -> /blog/2016
+     *    blog/2016 -> /blog/2016
+     *
+     *    If pwd = /blog/
+     *    /blog -> /blog/blog
+     *    2016/ -> /blog/2016
+     *
+     *  Also interprets . and ..
+     *
+     *    Given pwd = /blog/
+     *    . -> blog
+     *    .. -> /
+     *
+     *  TODO: implement . and .. embedded in other paths.
+     * */
     if (path === '.') {
       return this.pwd;
     }
@@ -329,12 +358,14 @@ class Terminal {
       }
       return '/' + parts.join('/') + '/';
     }
-    if (path[0] !== '/') {
+    if (path.length > 1) {
       path = path.replace(/^\/+|\/+$/g, '');
       path = this.pwd + path + '/';
       return path;
-    } else {
+    } else if (path.length === 1 && path[0] === '/'){
       return '/';
+    } else {
+      return path;
     }
   }
 

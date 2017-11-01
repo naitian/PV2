@@ -9,7 +9,11 @@
 {
     {% for page in files %}
     "{{ page.url }}": {
+        {% if page.terminal_content %}
+        "content": "{{ page.terminal_content | replace: '"', "'" | normalize_whitespace}}"
+        {% else %}
         "content": "{{ page.content | replace: '"', "'" | normalize_whitespace}}"
+        {% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
 
