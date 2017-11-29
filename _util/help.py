@@ -62,12 +62,20 @@ elif sys.argv[1] == 'new':
 elif sys.argv[1] == 'publish':
     if len(sys.argv) < 3:
         print('Specify a file')
+        files = os.listdir(os.path.join(filedir, '../_drafts/'))
+        files = [f for f in files if not f.startswith('.')]
+        for ind, f in enumerate(files):
+            print('{}) {}'.format(ind + 1, f))
+        ind = input("Which file: ")
+        ind = int(ind)
+        draft = files[ind - 1]
     else:
-        today = datetime.date.today()
-        postname = '{}-{}'.format(str(today), sys.argv[2])
-        draftpath = os.path.join(filedir, '../_drafts', sys.argv[2])
-        postpath = os.path.join(filedir, '../_posts', postname)
-        os.rename(draftpath, postpath)
+        draft = sys.argv[2]
+    today = datetime.date.today()
+    postname = '{}-{}'.format(str(today), draft)
+    draftpath = os.path.join(filedir, '../_drafts', draft)
+    postpath = os.path.join(filedir, '../_posts', postname)
+    os.rename(draftpath, postpath)
 else:
     print('No such subcommand')
 

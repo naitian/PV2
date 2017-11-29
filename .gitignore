@@ -13,3 +13,4 @@ vendor/
 **/.DS_Store
 env/
 screenshot.sh
+_drafts/
