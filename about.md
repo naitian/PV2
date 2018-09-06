@@ -8,7 +8,7 @@ custom_css:
 
 Hi! I'm **Naitian**.
 
-I'm a senior at Thomas Jefferson High School for Science and Technology. I enjoy
+I'm a first-year at the University of Michigan, Ann Arbor (go blue!). Before that, I was at Thomas Jefferson High School for Science and Technology. I enjoy
 programming, playing sweet, sweet tunes on the tenor saxophone, and drawing
 (both on paper and in vector illustration software). I work with HTML, CSS,
 Node.js, Python, as well as whatever else happens to catch my fancy.
