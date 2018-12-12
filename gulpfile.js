@@ -22,6 +22,12 @@ const jekyllBuild = () => {
         {stdio: 'inherit'});
 };
 
+const jekyllIncBuild = () => {
+   return cp.spawn('bundle',
+        ['exec', 'jekyll', 'build', '--incremental', '--drafts', '--config', '_config_dev.yml', 'JEKYLL_ENV=production'],
+        {stdio: 'inherit'});
+};
+
 const jekyllProduction = () => {
    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'});
 };
@@ -51,7 +57,7 @@ const watch = () => {
    gulp.watch('_assets/js/**/*.js', {interval: 500}, gulp.series('js', 'jekyll-rebuild'));
    gulp.watch(['_assets/css/**/*.scss', '_includes/**/*.css'], {interval: 500}, gulp.series('css', 'jekyll-rebuild'));
    gulp.watch(['_assets/img/**/*'], {interval: 500}, gulp.series('image-dev', 'jekyll-rebuild'));
-   gulp.watch(['*.html', '*.json', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '**/*.html', '!_site/*'], {interval: 500}, gulp.series( 'jekyll-rebuild'));
+   gulp.watch(['*.html', '*.json', '_layouts/*.html', '_posts/*', '_art/*', '_projects/*', '_includes/*', '_drafts/*', '!_site/*'], {interval: 500}, gulp.series( 'jekyll-inc-rebuild'));
 };
 
 const imageTask = () => {
@@ -72,6 +78,8 @@ const imageDev = () => {
  ***********************/
 
 gulp.task('jekyll-rebuild', jekyllBuild);
+
+gulp.task('jekyll-inc-rebuild', jekyllIncBuild);
 
 gulp.task('jekyll-prod', jekyllProduction);
 
