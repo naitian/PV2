@@ -15,25 +15,25 @@ custom_js:
 
 <div id="projects-wrapper">
     {% for project in site.projects %}
-        <a href="{{project.url}}">
-            <div class="project-card">
-                <img src="{% if project.thumbnail %}/thumbnails/{{project.thumbnail}}{% else %}/thumbnails/blank_project.png{% endif %}">
-                <div class="project-text">
-                    <h1>{{ project.title }}</h1>
-                    <p>{{ project.description | truncate: 45, "..." }}</p>
-                </div>
+    <a href="{{project.url}}">
+        <div class="project-card">
+            <img src="{% if project.thumbnail %}/thumbnails/{{project.thumbnail}}{% else %}/thumbnails/blank_project.png{% endif %}">
+            <div class="project-text">
+                <h1>{{ project.title }}</h1>
+                <p>{{ project.description | truncate: 45, "..." }}</p>
             </div>
-        </a>
+        </div>
+    </a>
     {% endfor %}
 </div>
 
 <script type="text/javascript">
-  SimpleJekyllSearch({
-	searchInput: document.getElementById('search-input'),
-	resultsContainer: document.getElementById('results-container'),
-	json: '{{ site.baseurl }}/project-search.json',
-    searchResultTemplate: '<a href="{url}" title="{desc}"><img src="/thumbnails/{thumbnail}"/>{title}: {desc}</a>',
-	noResultsText: 'No results found',
-  })
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/project-search.json',
+        searchResultTemplate: '<a href="{url}" title="{desc}"><img src="/thumbnails/{thumbnail}"/>{title}: {desc}</a>',
+        noResultsText: 'No results found',
+    })
 </script>
 
