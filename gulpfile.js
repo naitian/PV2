@@ -29,7 +29,7 @@ const jekyllIncBuild = () => {
 };
 
 const jekyllProduction = () => {
-   return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {env: {JEKYLL_ENV: 'production'}, stdio: 'inherit', shell: '/bin/bash'});
+   return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'});
 };
 
 const css = () => {

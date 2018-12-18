@@ -21,8 +21,7 @@
         {% endfor %}
     {% endif %}
 
-    {% if jekyll.environment == "production" %}
-        <!-- Google Analytics -->
+    {% if site.production %}
         {% include ga.html %}
     {% endif %}
 
