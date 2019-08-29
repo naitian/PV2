@@ -1,25 +1,16 @@
-.highlight .lineno {
-    user-select: none;
+.highlight code {
+    padding: 0;
 }
 
-.highlight .gutter {
-    padding: 0px 5px;
-    background-color: #444
-}
-
-.highlight .code {
-    padding: 0px 10px;
-}
-
-.highlight pre {
+pre.highlight {
     font-family: Consolas, monospace;
     font-size: 14px;
     line-height: 1.5;
+
+    margin: 10px;
 }
 
-.highlight {
-    overflow-x: scroll;
+div.highlight {
     width: 100%;
-    margin: 30px 0 30px 50%;
-    transform: translateX(-50%);
+    overflow-x: scroll;
 }
