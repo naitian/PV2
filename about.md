@@ -8,10 +8,13 @@ custom_css:
 
 Hi! I'm **Naitian**.
 
-I'm a first-year at the University of Michigan, Ann Arbor (go blue!). Before that, I was at Thomas Jefferson High School for Science and Technology. I enjoy
-programming, playing sweet, sweet tunes on the tenor saxophone, and drawing
-(both on paper and in vector illustration software). I work with HTML, CSS,
-Node.js, Python, as well as whatever else happens to catch my fancy.
+I'm a sophomore at the University of Michigan, Ann Arbor (go blue!). Before
+that, I was at Thomas Jefferson High School for Science and Technology. I enjoy
+programming, playing sweet, sweet tunes on the tenor saxophone, and poking and
+prodding at data. Lately, I've been working with Professor [David
+Jurgens](http://jurgens.people.si.umich.edu/) at the
+[Blablablab](https://blablablab.si.umich.edu).
+
 
 I promise I am [who I am](https://keybase.io/naitian).
 
