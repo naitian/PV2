@@ -1,7 +1,11 @@
 @import 'partials/_terminal';
 
+$background: #fafafa;
+$text: #000;
+
 body {
-    background-color: #A5C0FF;
+    // background-color: #A5C0FF;
+    background-color: $background;
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -9,6 +13,12 @@ body {
 
 h1 {
     font-weight: 400;
+    margin-bottom: 0;
+}
+
+.subline {
+    font-size: 1.5rem;
+    opacity: 0.7;
 }
 
 #wrapper {
@@ -32,7 +42,7 @@ li {
 }
 
 a {
-    color: #000;
+    color: $text;
     text-decoration: none;
 }
 
@@ -44,24 +54,26 @@ a:hover {
 #flip {
     width: 0px;
     height:0px;
-    background-color: #fff;
+    background-color: $background;
     position: fixed;
     bottom: 0;
     right: 0;
 
-    border-left: 50px solid #c8d8ff;
+    border-left: 50px solid rgba(255, 255, 255, 0.2);
     border-bottom: 50px solid #272727;
 
     transition: border-width .2s ease-in-out;
 
-    box-shadow: -5px -5px 10px 0px #92a8da;
+    // box-shadow: -5px -5px 10px 0px #92a8da;
+    box-shadow: -5px -5px 10px 0px rgba(80, 80, 80, 0.3);
 }
 
 #flip:hover {
     border-left-width: 60px;
     border-bottom-width: 60px;
     cursor: pointer;
-    box-shadow: -7px -7px 17px 4px #92a8da;
+    box-shadow: -7px -7px 17px 4px rgba(80, 80, 80, 0.3);
+    // box-shadow: -7px -7px 17px 4px #92a8da;
 }
 
 #flip:hover::after {
@@ -70,10 +82,10 @@ a:hover {
 
 #flip::after {
     position: absolute;
-    font-family: Meslo, Menlo;
+    font-family: Meslo, Menlo, Courier, monospace;
     content: 'click on me! =>';
     color: #FFF;
-    background-color: #000;
+    background-color: $text;
     right: 60px;
     width: 150px;
     padding: 2px;
