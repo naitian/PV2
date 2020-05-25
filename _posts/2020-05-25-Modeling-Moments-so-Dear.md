@@ -6,6 +6,10 @@ tags:
   - stats
 ---
 
+In the time that you've started reading this, there's a
+<span class="output time"></span> chance that you've experienced, as Jonathan
+Larson put it, a moment so dear[^1].
+
 # Table of Contents
 {:.no_toc}
 * table of contents
@@ -33,9 +37,9 @@ fair share of moments so dear.
 
 We know from the lyrics that there are 525,000 moments so dear in one year.
 There are 525,600 minutes. That means there is, on average, one moment so dear
-approximately every 1.001 minutes.
+(MsD) approximately every 1.001 minutes.
 
-It makes sense to model the distribution of our moments so dear as exponential.
+It makes sense to model the distribution of our MsDs (MssD?) as exponential.
 Exponential distributions are frequently used to model "waiting time" problems,
 because they have a couple of properties, which are reflected in our scenario.
 
@@ -55,7 +59,7 @@ M \sim \text{Exp}(\beta = 1.001)
 $$
 
 where $$\beta$$ is the mean, and $$M$$ is the random variable for minutes until
-the next moment so dear.
+the next MsD.
 
 At this point, you may be asking yourself, what are the implications?
 
@@ -64,7 +68,7 @@ The implications, my friend, are many.
 # Calculating Probabilities
 
 First, this means **we can make claims about, say, the probability of
-experiencing a moment so dear (MsD)**.
+experiencing a moment so dear**.
 
 <style>
     svg {
@@ -123,7 +127,7 @@ experiencing a moment so dear (MsD)**.
     const updateTimeProb = function () {
         let timeDiff = new Date() - startTime;
         timeDiff /= (60 * 1000);
-        document.querySelector("span.time.output").innerText = format(cdf(timeDiff))
+        document.querySelectorAll("span.time.output").forEach(el => el.innerText = format(cdf(timeDiff)))
     }
     window.onload = function () {
         document.querySelectorAll("input.inline").forEach(el => {
@@ -223,7 +227,7 @@ experiencing a moment so dear (MsD)**.
         g__yaxis.call(yAxis);
         x__label.attr("transform", `translate(${width/2}, ${height - margins.top})`)
             .style("text-anchor", "middle")
-            .text("minutes since last occurrence");
+            .text("minutes since last MsD");
     }
     window.onresize = resize;
 </script>
@@ -257,13 +261,12 @@ year, in a week, indeed in a minute, than the next!
 Assuming we're right to use the exponential distribution, how good is our guess
 of the parameters (in this case, the average waiting time)? Since we're looking
 at means, we can use the Central Limit Theorem to give a rough confidence
-interval. We know, for large $$n$$, the mean follows the normal distribution
+interval. We know, for large $$n$$, the mean follows the normal distribution[^2]
 
 $$
 \mathcal{N}(\mu, \mu^2 / n)
 $$
 
-(parameterized by the mean and the variance).
 
 We can use this mean and standard deviation to calculate a 95% confidence
 interval: we can state with 95% confidence that the true mean of our exponential
@@ -273,12 +276,14 @@ distribution lies in the interval $$[ 0.9984, 1.004 ]$$.
 
 If you are like me, you may have been surprised by just how frequently these
 moments so dear arise. After all, since you've loaded this page, there's a <span
-class="time output"></span> chance that you've experienced a moment so dear
-(assuming you experienced one immediately before this page load -- this provides
-a lower bound).
+class="time output"></span> chance that you've experienced a moment so dear.
 
 I certainly didn't think that was the case, but maybe there's a lesson to be
-learned here. Maybe we should cherish more of the little things and embrace the
-delight that comes with our normal everyday life. Maybe I _do_ experience a
-moment that I should hold dear every minute or so. After all, the numbers never
-lie, right?
+learned here.  Maybe I _do_ experience a moment that I should hold dear every
+minute or so.  Maybe we should cherish more of the little things and embrace the
+delight that comes with our normal everyday life.
+
+After all, the numbers never lie, right?
+
+[^1]: assuming you experienced one immediately before this page load -- this provides a lower bound
+[^2]: parameterized by the mean and the variance (notably, variance and not standard deviation)
