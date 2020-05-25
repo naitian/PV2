@@ -15,6 +15,10 @@ prodding at data. Lately, I've been working with Professor [David
 Jurgens](http://jurgens.people.si.umich.edu/) at the
 [Blablablab](https://blablablab.si.umich.edu).
 
+You can also find me creating interactive visualizations for the [Michigan
+Daily](https://michigandaily.com) and organizing data science projects for the
+[Michigan Data Science Team](https://mdst.club)
+
 
 I promise I am [who I am](https://keybase.io/naitian).
 
