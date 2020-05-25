@@ -45,7 +45,7 @@ const js = () => {
     return gulp.src('./_assets/js/**/*.js')
       .pipe(debug())
       .pipe(babel({
-         presets: ['es2015']
+         presets: ['@babel/env']
       }))
       .pipe(uglify())
       .pipe(gulp.dest('js'));
