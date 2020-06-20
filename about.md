@@ -8,7 +8,7 @@ custom_css:
 
 Hi! I'm **Naitian**.
 
-I'm a sophomore at the University of Michigan, Ann Arbor (go blue!). Before
+I'm a junior at the University of Michigan, Ann Arbor (go blue!). Before
 that, I was at Thomas Jefferson High School for Science and Technology. I enjoy
 programming, playing sweet, sweet tunes on the tenor saxophone, and poking and
 prodding at data. Lately, I've been working with Professor [David
