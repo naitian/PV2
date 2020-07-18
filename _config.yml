@@ -16,7 +16,8 @@
 title: Palindromic
 email: naitian@mg.naitian.org
 description: > # this means to ignore newlines until "baseurl:"
-    A look into the Internet, software, and art that is my life.
+    Naitian Zhou's web presence. A deep dive (belly flop) into the Internet,
+    software, and art that is my life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://naitian.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: NaitianZhou
